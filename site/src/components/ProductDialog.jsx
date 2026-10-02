@@ -58,7 +58,7 @@ export default function ProductDialog({ product, onClose }) {
         >
           <motion.div
             data-lenis-prevent
-            className="relative grid max-h-full w-full overscroll-contain max-w-6xl grid-cols-1 overflow-y-auto rounded-t-[20px] bg-ink-2 ring-1 ring-bone/10 md:grid-cols-[1.15fr_1fr] md:overflow-hidden md:rounded-[20px]"
+            className="relative grid max-h-full w-full overscroll-contain max-w-6xl grid-cols-1 overflow-y-auto rounded-t-[20px] bg-ink-2 ring-1 ring-bone/10 md:h-full md:grid-rows-[minmax(0,1fr)] md:grid-cols-[1.15fr_1fr] md:overflow-hidden md:rounded-[20px]"
             initial={reduce ? { opacity: 0 } : { y: 48, opacity: 0, scale: 0.97 }}
             animate={{ y: 0, opacity: 1, scale: 1 }}
             exit={reduce ? { opacity: 0 } : { y: 24, opacity: 0, scale: 0.98 }}
@@ -107,7 +107,7 @@ export default function ProductDialog({ product, onClose }) {
               )}
             </div>
 
-            <div className="flex flex-col gap-8 p-7 md:overflow-y-auto md:p-12" data-lenis-prevent>
+            <div className="flex flex-col gap-8 p-7 md:min-h-0 md:overflow-y-auto md:overscroll-contain md:p-12" data-lenis-prevent>
               <div>
                 <p className="caps text-brass">{t.nav[product.cat]}</p>
                 <h2 className="display-m mt-5 !text-[clamp(2rem,3.6vw,3.25rem)]">{product.name[lang]}</h2>
