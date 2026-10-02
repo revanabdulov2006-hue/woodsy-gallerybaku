@@ -1,9 +1,16 @@
-// WhatsApp nömrəsi beynəlxalq formatda (məs. "994501234567"). Boşdursa Instagram DM istifadə olunur.
-export const WHATSAPP = ''
+// WhatsApp nömrəsi beynəlxalq formatda: 055 347-57-37
+export const WHATSAPP = '994553475737'
+export const PHONE = '055 347-57-37'
+export const PHONE_TEL = '+994553475737'
+export const CURRENCY = '₼'
 export const INSTAGRAM = 'woodsy_gallerybaku'
 
+export function waLink(text) {
+  return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`
+}
+
 export function orderLink(text) {
-  if (WHATSAPP) return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`
+  if (WHATSAPP) return waLink(text)
   return `https://ig.me/m/${INSTAGRAM}`
 }
 

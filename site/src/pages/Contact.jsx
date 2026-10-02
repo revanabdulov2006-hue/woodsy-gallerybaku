@@ -1,6 +1,6 @@
 import { motion } from 'motion/react'
-import { Arrow, FadeUp, Lines, PAGE_DELAY, PillButton } from '../components/ui.jsx'
-import { INSTAGRAM, WHATSAPP, ease, orderLink } from '../lib/config.js'
+import { FadeUp, Lines, PAGE_DELAY, SocialLinks } from '../components/ui.jsx'
+import { ease } from '../lib/config.js'
 import { useI18n } from '../lib/i18n.jsx'
 
 export default function Contact() {
@@ -20,20 +20,9 @@ export default function Contact() {
       </motion.p>
 
       <FadeUp delay={0.1} className="mt-14 flex flex-wrap items-center gap-6">
-        <PillButton as="a" href={orderLink(t.msgCustom)} target="_blank" rel="noreferrer">
-          {WHATSAPP ? t.contactWhatsapp : t.contactInstagram}
-        </PillButton>
+        <SocialLinks size="lg" />
         <span className="text-bone-dim">{t.contactCity}</span>
       </FadeUp>
-
-      <ul className="mt-20 max-w-2xl border-t border-bone/10">
-        <li className="border-b border-bone/10">
-          <a href={`https://instagram.com/${INSTAGRAM}`} target="_blank" rel="noreferrer" className="group flex items-center justify-between py-6 text-bone no-underline">
-            <span className="display-m">@{INSTAGRAM}</span>
-            <Arrow size={20} className="text-brass transition-transform duration-500 [transition-timing-function:var(--ease-out-strong)] md:group-hover:translate-x-1 md:group-hover:-translate-y-0.5" />
-          </a>
-        </li>
-      </ul>
     </section>
   )
 }

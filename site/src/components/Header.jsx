@@ -1,9 +1,12 @@
+import { motion } from 'motion/react'
+import { useCart } from '../lib/cart.jsx'
 import { useI18n } from '../lib/i18n.jsx'
 import { useTransition } from '../lib/transition.jsx'
 import { GoLink } from './ui.jsx'
 
 export default function Header() {
   const { t, toggle } = useI18n()
+  const { count, bump, setOpen: setCartOpen } = useCart()
   const { menuOpen, openMenu, closeMenu } = useTransition()
 
   return (
@@ -15,6 +18,18 @@ export default function Header() {
       <div className="pointer-events-auto flex items-center gap-1 rounded-full bg-ink/45 p-1.5 pl-5 ring-1 ring-bone/15 backdrop-blur-xl">
         <button type="button" onClick={toggle} aria-label={t.langLabel} className="caps press cursor-pointer pr-3 text-bone-dim transition-colors hover:text-bone">
           {t.lang}
+        </button>
+        <button
+          id="cart-button"
+          type="button"
+          onClick={() => setCartOpen(true)}
+          aria-label={`${t.cart} (${count})`}
+          className="press relative mr-1 grid h-11 w-11 cursor-pointer place-items-center rounded-full text-bone-dim transition-colors hover:text-bone"
+        >
+          <motion.svg key={bump} width="20" height="20" viewBox="0 0 64 64" fill="none" aria-hidden="true" initial={bump ? { scale: 1.3 } : false} animate={{ scale: 1 }} transition={{ type: 'spring', duration: 0.5, bounce: 0.5 }}>
+            <path d="M14 22h36l-3 24a4 4 0 0 1-4 3H21a4 4 0 0 1-4-3L14 22zM24 22v-4a8 8 0 0 1 16 0v4" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+          </motion.svg>
+          {count > 0 && <span className="tabular absolute right-0.5 top-0.5 grid h-[18px] min-w-[18px] place-items-center rounded-full bg-brass px-1 text-[10px] font-bold leading-none text-ink">{count}</span>}
         </button>
         <button
           type="button"

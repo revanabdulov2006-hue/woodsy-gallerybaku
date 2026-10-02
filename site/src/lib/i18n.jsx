@@ -34,6 +34,14 @@ const dict = {
     contactInstagram: 'Instagram', contactCity: 'Bakı, Azərbaycan', contactWhatsapp: 'WhatsApp',
     footerLine: 'Əl ilə, Bakıda.', rights: 'Bütün hüquqlar qorunur.',
     msgProduct: (n) => `Salam! "${n}" haqqında məlumat almaq istəyirəm.`, msgCustom: 'Salam! Fərdi sifariş vermək istəyirəm.',
+    qty: 'Say', total: 'Cəmi', addToCart: 'Səbətə at', added: 'Səbətə əlavə olundu', orderWa: 'WhatsApp ilə sifariş', callUs: 'Zəng et', price: 'Qiymət', each: 'ədəd',
+    cart: 'Səbət', cartEmpty: 'Səbətiniz boşdur', cartEmptyText: 'Bəyəndiyiniz əsəri seçib səbətə əlavə edin.', remove: 'Sil', increase: 'Artır', decrease: 'Azalt', checkoutWa: 'WhatsApp ilə sifariş ver', orCall: 'Və ya zəng edin',
+    info: [
+      ['Hazırlanma müddəti', '7–15 gün. Hər əsər sifarişdən sonra əllə hazırlanır, qurutma və epoksid mərhələsi vaxt tələb edir.'],
+      ['Çatdırılma', 'Bakı daxili və bölgələrə çatdırılma. Qablaşdırma zədələnmədən qoruyan ağac qutuda aparılır. Qiymət ünvana görə dəqiqləşir.'],
+      ['Qaytarma siyasəti', 'Əsərlər sifarişlə hazırlandığı üçün geri qaytarılmır. Qüsur və ya daşınma zədəsi olarsa 3 gün ərzində bildirin, əvəz edək.'],
+    ],
+    msgOrder: (lines, total) => `Salam! Sifariş vermək istəyirəm:\n${lines}\nCəmi: ${total}`,
     lang: 'EN', langLabel: 'Switch to English', notFound: 'Səhifə tapılmadı', home: 'Ana səhifəyə qayıt',
   },
   en: {
@@ -69,6 +77,14 @@ const dict = {
     contactInstagram: 'Instagram', contactCity: 'Baku, Azerbaijan', contactWhatsapp: 'WhatsApp',
     footerLine: 'By hand, in Baku.', rights: 'All rights reserved.',
     msgProduct: (n) => `Hello! I would like to know more about "${n}".`, msgCustom: 'Hello! I would like to commission a custom piece.',
+    qty: 'Qty', total: 'Total', addToCart: 'Add to cart', added: 'Added to cart', orderWa: 'Order on WhatsApp', callUs: 'Call us', price: 'Price', each: 'each',
+    cart: 'Cart', cartEmpty: 'Your cart is empty', cartEmptyText: 'Pick a piece you love and add it to the cart.', remove: 'Remove', increase: 'Increase', decrease: 'Decrease', checkoutWa: 'Order on WhatsApp', orCall: 'Or call us',
+    info: [
+      ['Production time', '7–15 days. Each piece is handmade after you order; drying and resin curing take time.'],
+      ['Delivery', 'Delivery within Baku and to the regions. Packed in a protective wooden crate. Price depends on the address.'],
+      ['Return policy', 'As pieces are made to order they cannot be returned. If there is a defect or transit damage, tell us within 3 days and we will replace it.'],
+    ],
+    msgOrder: (lines, total) => `Hello! I would like to order:\n${lines}\nTotal: ${total}`,
     lang: 'AZ', langLabel: 'Azərbaycan dilinə keç', notFound: 'Page not found', home: 'Back to home',
   },
 }

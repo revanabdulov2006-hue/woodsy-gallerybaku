@@ -1,6 +1,7 @@
 import Lenis from 'lenis'
 import { useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
+import CartDrawer from './components/CartDrawer.jsx'
 import Footer from './components/Footer.jsx'
 import Header from './components/Header.jsx'
 import { useI18n } from './lib/i18n.jsx'
@@ -50,6 +51,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+      <CartDrawer />
       <div className="grain" aria-hidden="true" />
     </>
   )

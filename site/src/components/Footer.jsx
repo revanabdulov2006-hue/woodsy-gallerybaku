@@ -1,7 +1,6 @@
-import { INSTAGRAM } from '../lib/config.js'
 import { useI18n } from '../lib/i18n.jsx'
 import { MENU } from '../lib/transition.jsx'
-import { GoLink } from './ui.jsx'
+import { GoLink, SocialLinks } from './ui.jsx'
 
 export default function Footer() {
   const { t, toggle } = useI18n()
@@ -21,7 +20,7 @@ export default function Footer() {
           ))}
         </ul>
         <div className="flex flex-col gap-3 text-bone-dim">
-          <a className="draw w-fit text-bone no-underline" href={`https://instagram.com/${INSTAGRAM}`} target="_blank" rel="noreferrer">@{INSTAGRAM}</a>
+          <SocialLinks />
           <span>{t.contactCity}</span>
           <button type="button" onClick={toggle} aria-label={t.langLabel} className="caps press mt-4 w-fit cursor-pointer text-bone">{t.lang}</button>
         </div>
