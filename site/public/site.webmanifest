@@ -1,0 +1,20 @@
+{
+  "name": "Woodsy Gallery Baku",
+  "short_name": "Woodsy Gallery",
+  "description": "Woodsy Gallery Baku — əl ilə hazırlanan premium taxta nərd, şahmat, masa, dekor və saatlar.",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#120d09",
+  "background_color": "#120d09",
+  "display": "standalone"
+}
